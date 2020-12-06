@@ -9,8 +9,8 @@ export const fetchCurrentWeather = createAsyncThunk(
   ({ query }) => weatherAPI.fetchCurrentWeather({ query })
 );
 
-export const fetchWeekForecast = createAsyncThunk(`${sliceName}/fetchCurrentWeather`, ({ query }) =>
-  weatherAPI.fetchWeekWeather({ query })
+export const fetchWeekForecast = createAsyncThunk(`${sliceName}/fetchWeekForecast`, ({ query }) =>
+  weatherAPI.fetchWeekForecast({ query })
 );
 
 export const fetchWeatherForecast = createAsyncThunk(
@@ -27,14 +27,14 @@ export const weatherSlice = createSlice({
   },
   reducers: {},
   extraReducers: {
-    [fetchCurrentWeather.pending]: (state, { payload, meta }) => {
+    [fetchWeekForecast.pending]: (state, { payload, meta }) => {
       state.loading = true;
     },
-    [fetchCurrentWeather.fulfilled]: (state, { payload, meta }) => {
+    [fetchWeekForecast.fulfilled]: (state, { payload, meta }) => {
       state.loading = false;
       state.current = payload.data;
     },
-    [fetchCurrentWeather.rejected]: (state, { error, meta }) => {
+    [fetchWeekForecast.rejected]: (state, { error, meta }) => {
       state.loading = false;
       state.error = error;
     },

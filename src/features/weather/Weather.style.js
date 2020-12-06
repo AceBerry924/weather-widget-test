@@ -4,7 +4,12 @@ const WeatherContainer = styled.div`
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 500px;
+    padding: 0;
+    width: 700px;
+  }
+
+  h3 {
+    color: #3d5463;
   }
 
   .search-box {
@@ -66,6 +71,10 @@ const WeatherContainer = styled.div`
   }
 
   .weather-info {
+    h4 {
+      margin: 0;
+    }
+
     &__today {
       display: flex;
       align-items: center;
@@ -73,6 +82,33 @@ const WeatherContainer = styled.div`
     }
     &__extra {
       text-align: left;
+    }
+    &__forecast {
+      padding-top: 1rem;
+    }
+  }
+
+  .daily-weather {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    @media (min-width: 768px) {
+      justify-content: space-between;
+    }
+
+    &__item {
+      width: 33.333333333333%;
+
+      @media (min-width: 768px) {
+        width: 16.6666%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 `;

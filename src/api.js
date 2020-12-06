@@ -9,7 +9,7 @@ export default {
     ),
   fetchWeekForecast: ({ query }) =>
     axios.get(
-      `https://api.openweathermap.org/data/2.5/daily?q=${query}&units=metric&appid=${API_KEY}&cnt=6`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&appid=${API_KEY}`
     ),
   fetchWeatherForecast: ({ lat, lon }) =>
     axios.get(
